@@ -1,6 +1,6 @@
 {
-  "name": "import-sort-style-module",
-  "version": "0.1.0",
+  "name": "import-sort-style-cra-module",
+  "version": "0.2.0",
   "description": "An import-sort style that groups and sorts by module",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",

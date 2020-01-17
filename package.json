@@ -1,6 +1,6 @@
 {
   "name": "import-sort-style-cra-module",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "An import-sort style that groups and sorts by module",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -10,8 +10,7 @@
     "build:watch": "tsc -b . -w",
     "test": "mocha --require ts-node/register --recursive \"test/**/*.ts\"",
     "test:watch": "mocha -w --require ts-node/register --recursive \"test/**/*.ts\"",
-    "lint": "eslint --ext ts src",
-    "postinstall": "tsc -b ."
+    "lint": "eslint --ext ts src"
   },
   "author": "Renke Grunwald <renke@renke.org> (https://github.com/renke)",
   "repository": "renke/import-sort",

@@ -30,7 +30,8 @@ export default function(styleApi: IStyleAPI): IStyleItem[] {
     isNodeModule,
     isRelativeModule,
     moduleName,
-    unicode
+    unicode,
+    naturally
   } = styleApi;
 
   function isBaseModule(imported: IImport) {
@@ -53,24 +54,24 @@ export default function(styleApi: IStyleAPI): IStyleItem[] {
     // import … from "fs";
     {
       match: isNodeModule,
-      sort: moduleName(unicode),
-      sortNamedMembers: alias(unicode)
+      sort: moduleName(naturally),
+      sortNamedMembers: alias(naturally)
     },
     { separator: true },
 
     // import … from "foo";
     {
       match: and(isAbsoluteModule, not(isBaseModule), not(isAliasModule)),
-      sort: moduleName(unicode),
-      sortNamedMembers: alias(unicode)
+      sort: moduleName(naturally),
+      sortNamedMembers: alias(naturally)
     },
     { separator: true },
 
     // import … from "foo";
     {
       match: or(isBaseModule, isAliasModule),
-      sort: moduleName(unicode),
-      sortNamedMembers: alias(unicode)
+      sort: moduleName(naturally),
+      sortNamedMembers: alias(naturally)
     },
     { separator: true },
 
@@ -78,8 +79,8 @@ export default function(styleApi: IStyleAPI): IStyleItem[] {
     // import … from "../foo";
     {
       match: isRelativeModule,
-      sort: [dotSegmentCount, moduleName(unicode)],
-      sortNamedMembers: alias(unicode)
+      sort: [dotSegmentCount, moduleName(naturally)],
+      sortNamedMembers: alias(naturally)
     },
     { separator: true }
   ];
